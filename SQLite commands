@@ -1,0 +1,100 @@
+# 
+# SQL is use to to manipulate and manage databses. A database is a structure held in the computer that contains data, for example CSV files.
+# SQL Studio is a more user-friendly than SQL.
+#
+# Useful SQL Commands
+#
+# SELECT statements is the most used command and is use to get data from a data base. 
+SELECT column_name # It can also be columns
+FROM table_name; # name of csv. 
+#
+#' Example II for SELECT comand This wold select rows with values 1234 and will show column_1
+SELECT column_1, '1234' FROM table_1;
+#`
+# Example. This gets the age and names from the csv file people where age is greater than 18 and less than 65. 
+SELECT age, name FROM people WHERE age > 18 AND age < 65;
+#
+Creates a new table in the database and allows to column name specification
+# CREATE TABLE table_name (
+column_1 datatype, 
+column_2 datatype,
+column_3 datatype,
+);
+#
+# Use to remove rows in tables
+DELETE FROM table_name
+WHERE some_column = some_value;
+#
+# Lets you add columns to a table in a database
+ALERT TABLE table_name
+ADD column_name datatype  
+#
+# You can use AS to rename a column with an alias
+SELECT column_name AS 'New Name'
+FROM table_name;
+#
+# Will combine rows from different tables if the conditions are true. 
+SELECT column_name
+FROM table_1
+JOIN table_2
+ON table_1.column_name = table_2.column_name;
+#
+# Add new rows to tables
+INSERT INTO table_name (column_1, column_2, column_3)
+VALUES (value_1, 'value_2', value_3);
+#
+# Combine rows from different tables
+SELECT column_name
+FROM table_1
+LEFT JOIN table_2
+  ON table_1.column_name = table_2.column_name;
+#
+#` Example II, JOIN command
+SELECT c1, c2, c3, FROM table LEFT JOIN c3 USING (C2); # LEFT JOINS TABLES using c2 column.
+#
+# Between can be used to filture the results between certain ranges, numbers, text, dates, etc.
+SELECT columns_name # Columns could also be selected
+FROM table_name
+WHERE column_name BETWEEN value_1 AND value_2;
+#
+# Sorting the data
+SELECT column_name
+FROM table_name
+ORDER BY column_name ASC | DESC; # 
+#
+#` Example II for sorting. 
+SELECT column1, column2 FROM table1 ORDER BY column2 ASC;
+#
+#` Example III for sorting
+SELECT c1, c2, c3 FROM table1 ORDER BY c1 ASC, c2 DESC;
+#
+# Counts the number of rows not = NULL
+SELECT COUNT(column_name)
+FROM table_name;
+#
+# Test for NULLS, also IS NOT NULL can be used. 
+SELECT clumn_name # It can also be multiple columns
+FROM table_name
+WHERE column_name IS NULL;
+#
+# Average of column_name from table_name
+SELECT AVG(column_name)
+FROM table_name;
+#
+# Max value of column
+SELECT MAX(column_name)
+FROM table_name;
+#
+# Min value
+SELECT MIN(column_name)
+FROM table_name;
+# 
+# Will round the numbers to closes
+SELECT ROUND(column_name, integer) # intiger would round decimal places
+FROM table_name;
+#
+# Returns the sum of all the values in that column
+SELECT SUM(column_name)
+FROM table_name;
+#
+#
